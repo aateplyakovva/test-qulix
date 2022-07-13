@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal Template</title>
+<link rel="stylesheet" href="./styles/iconsfont.css">
+<link rel="stylesheet" href="./styles/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700&family=Work+Sans:wght@600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <div class="pop_up">
+        <div class="pop_up_container">
+            <div class="pop_up_body">
+                <p class="title">Create New task</p>
+                <form action="" class="form">
+                    <div class="input-counter">
+                        <input class='counter' type="text" placeholder="Title" maxlength=100>
+                        <div class="result">12</div>
+                    </div>
+
+                    <input class="input-descr" type="text" placeholder="Click to add Description">
+
+                    <div class="colorSelector">
+                        <p>Label color</p>
+                        <label class="buttonContainer">
+                            <input type="radio" name="color" value="color1" checked>
+                            <div class="colorOption color1"></div>
+                        </label>
+                        <label class="buttonContainer">
+                            <input type="radio" name="color" value="color2">
+                            <div class="colorOption color2"></div>
+                        </label>
+                        <label class="buttonContainer">
+                            <input type="radio" name="color" value="color3">
+                            <div class="colorOption color3"></div>
+                        </label>
+                        <label class="buttonContainer">
+                            <input type="radio" name="color" value="color4">
+                            <div class="colorOption color4"></div>
+                        </label>
+                        <label class="buttonContainer">
+                            <input type="radio" name="color" value="color5">
+                            <div class="colorOption color5"></div>
+                        </label>
+                    </div>
+                    <div class="select">
+                        <select>
+                            <option selected class="selected">Select Assignee</option>
+                            <option value="Anna">Anna</option>
+                            <option value="Anastasia">Anastasia</option>
+                            <option value="Victoria">Victoria</option>
+                            <option value="Daria">Daria</option>
+                        </select>
+                    </div>
+
+                    <div class="date">
+                        <input type="date" value="2021-07-13">
+                        <input type="date" value="2021-07-13">
+                    </div>
+
+                    <div class="buttons">
+                        <button class="button cancel">Cancel</button>
+                        <button class="button save">Save</button>
+                    </div>
+
+                  
+                </form>
+              
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
