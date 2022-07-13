@@ -7,6 +7,14 @@ $save-color: #5f65f6;
 $white: #fff;
 $black: #000;
 
+
+$twenty-px: 1.25rem;
+$thirtytwo-px: 2rem;
+$eight-px: 0.5rem;
+$thirtysix-px: 2.25rem;
+$twelve-px: 0.75rem;
+$fourteen-px: 0.9rem;
+
 $box-shadow: 0px 11.6189px 124.28px rgba(37, 72, 153, 0.17);
 $header-height: 8rem;
 $header-shrink-height: 5rem;
@@ -47,233 +55,243 @@ html {
   font-size: 100%;
 }
 
-.pop_up {
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
+body {
   font-family: $font-family;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: $main-color;
-  color: $txt-color;
+}
 
-  .pop_up_container {
-    display: flex;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .pop_up {
     width: 100%;
     height: 100%;
+    z-index: 1000;
 
-    .pop_up_body {
-      margin: auto;
-      max-width: 30rem;
-      height: 37rem;
-      background-color: $white;
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
-      padding: 12px 0px 0px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $main-color;
+    color: $txt-color;
 
-      p {
-        font-weight: 700;
-        font-size: 25px;
-        line-height: 32px;
-        padding: 33px 32px 0 32px;
-        color: $black;
-      }
+    .pop_up_container {
+      display: flex;
+      min-height: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem 0.625rem;
 
-      form {
-        padding: 0 32px 0 32px;
-        display: flex;
-        flex-direction: column;
+      .pop_up_body {
+        margin: auto;
+        max-width: 30rem;
+        height: 37rem;
+        background-color: $white;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        padding: $twelve-px 0px 0px;
 
-        ::-webkit-input-placeholder {
-          font-family: $font-family;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 32px;
-        }
-        ::-moz-placeholder {
-          color: #c0392b;
-        } /* Firefox 19+ */
-        :-moz-placeholder {
-          color: #c0392b;
-        } /* Firefox 18- */
-        :-ms-input-placeholder {
-          color: #c0392b;
-        }
-        input:focus {
-          outline: none;
-        }
-        input[type="text"] {
-          color: $txt-color;
-          font-weight: 500;
-          font-size: 18px;
-          border: none;
+        p {
+          font-weight: 700;
+          font-size: 1.5rem;
+          line-height: $thirtytwo-px;
+          padding: $thirtytwo-px $thirtytwo-px 0 $thirtytwo-px;
+          color: $black;
         }
 
-        .input-descr {
-          padding-top: 36px;
-        }
-
-        .input-counter {
-          padding-top: 47px;
+        form {
+          padding: 0 $thirtytwo-px 0 $thirtytwo-px;
           display: flex;
-          border-bottom: 1px solid $txt-color;
-          justify-content: space-between;
+          flex-direction: column;
 
-          input {
-            margin-bottom: 12px;
+          ::-webkit-input-placeholder {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 1.125rem;
+            line-height: $thirtytwo-px;
           }
-        }
-
-        .colorSelector {
-          display: flex;
-          align-items: center;
-          padding-top: 38px;
-          padding-bottom: 35px;
-
-          p {
+          ::-moz-placeholder {
+            color: #c0392b;
+          } /* Firefox 19+ */
+          :-moz-placeholder {
+            color: #c0392b;
+          } /* Firefox 18- */
+          :-ms-input-placeholder {
+            color: #c0392b;
+          }
+          input:focus {
+            outline: none;
+          }
+          input[type="text"] {
             color: $txt-color;
             font-weight: 500;
-            margin: 0;
-            font-size: 18px;
-            padding: 0 36px 0 0;
+            font-size: $twenty-px;
+            border: none;
           }
 
-          input[type="radio"] {
-            display: none;
+          .input-descr {
+            padding-top: $thirtysix-px;
           }
 
-          .colorOption {
-            height: 28px;
-            width: 28px;
-            border-radius: 50%;
+          .input-counter {
+            padding-top: 2.9rem;
+            display: flex;
+            border-bottom: 1px solid $txt-color;
+            justify-content: space-between;
+
+            input {
+              margin-bottom: $twelve-px;
+            }
           }
 
-          .buttonContainer {
-            display: inline-block;
-            margin-right: 10px;
+          .colorSelector {
+            display: flex;
+            align-items: center;
+            padding-top: 2.375rem;
+            padding-bottom: 2.2rem;
 
-            input:checked ~ .colorOption::before {
-              width: 36px;
-              height: 36px;
-              opacity: 0.4;
-              border: 1px solid #9797aa;
+            p {
+              color: $txt-color;
+              font-weight: 500;
+              margin: 0;
+              font-size: 1.125rem;
+              padding: 0 $thirtysix-px 0 0;
+            }
+
+            input[type="radio"] {
+              display: none;
+            }
+
+            .colorOption {
+              height: 1.75rem;
+              width: 1.75rem;
               border-radius: 50%;
             }
-            input:checked ~ .colorOption::after {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              content: url(../images/icons/arrow.svg);
+
+            .buttonContainer {
+              display: inline-block;
+              margin-right: 0.625rem;
+
+              input:checked ~ .colorOption::before {
+                width: $thirtysix-px;
+                height: $thirtysix-px;
+                opacity: 0.4;
+                border: 1px solid #9797aa;
+                border-radius: 50%;
+              }
+              input:checked ~ .colorOption::after {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                content: url(../images/icons/arrow.svg);
+              }
+            }
+
+            .color1 {
+              background: #878c93;
+            }
+
+            .color2 {
+              background: #6153cc;
+            }
+
+            .color3 {
+              background: #ff715b;
+            }
+
+            .color4 {
+              background: #151515;
+            }
+            .color5 {
+              background: #ffb627;
             }
           }
 
-          .color1 {
-            background: #878c93;
-          }
-
-          .color2 {
-            background: #6153cc;
-          }
-
-          .color3 {
-            background: #ff715b;
-          }
-
-          .color4 {
-            background: #151515;
-          }
-          .color5 {
-            background: #ffb627;
-          }
-        }
-
-        .select {
-          padding-bottom: 38px;
-          select {
-            -moz-appearance: none;
-            -ms-appearance: none;
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            padding: 10px 20px;
-            font-family: $font-family;
-            line-height: 20px;
-            font-size: 15px;
-            background-color: $white;
-            color: $txt-color;
-            outline: none;
-            border: 0.9px solid rgba(86, 103, 137, 0.26);
-            border-radius: 7.7px;
-            cursor: pointer;
-            background-image: url(../images/icons/select.svg);
-            background-repeat: no-repeat;
-            background-position: 371px 16px;
-            box-shadow: $box-shadow;
-
-            option {
-              line-height: 20px;
+          .select {
+            padding-bottom: 2.375rem;
+            select {
+              -moz-appearance: none;
+              -ms-appearance: none;
+              -webkit-appearance: none;
+              appearance: none;
+              width: 100%;
+              padding: 0.625rem $twenty-px;
+              font-family: $font-family;
+              line-height: $twenty-px;
+              font-size: $fourteen-px;
               background-color: $white;
-              font-size: 15px;
-            }
+              color: $txt-color;
+              outline: none;
+              border: 0.9px solid rgba(86, 103, 137, 0.26);
+              border-radius: $eight-px;
+              cursor: pointer;
+              background-image: url(../images/icons/select.svg);
+              background-repeat: no-repeat;
+              background-position: 23rem 1rem;
+              box-shadow: $box-shadow;
 
-            &::-ms-expand {
-              display: none;
-            }
-          }
-        }
+              option {
+                line-height: $twenty-px;
+                background-color: $white;
+                font-size: $fourteen-px;
+              }
 
-        .date {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 1px solid #9797aa;
-          padding-bottom: 35px;
-
-          input[type="date"] {
-            border: 0.9px solid rgba(86, 103, 137, 0.26);
-            border-radius: 7.7px;
-            width: 202px;
-            height: 50px;
-            font-family: $font-family;
-            padding: 0px 15px 0 43px;
-            font-size: 15px;
-            line-height: 20px;
-            font-weight: 500;
-            color: $txt-color;
-            background-image: url(../images/icons/calendar.svg);
-            background-repeat: no-repeat;
-            background-position: 13px 12px;
-            &::-webkit-calendar-picker-indicator {
-              display: none;
+              &::-ms-expand {
+                display: none;
+              }
             }
           }
-        }
 
-        .buttons {
-          margin-top: 25px;
-          display: flex;
-          justify-content: center;
-          .button {
-            width: 180px;
-            height: 56px;
-            border-radius: 10.561px;
-            border: none;
-            font-family: "Work Sans";
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 32px;
+          .date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #9797aa;
+            padding-bottom: $thirtytwo-px;
+
+            input[type="date"] {
+              border: 0.9px solid rgba(86, 103, 137, 0.26);
+              border-radius: $eight-px;
+              width: 12.6rem;
+              height: 3.125rem;
+              font-family: $font-family;
+              padding: 0px $fourteen-px 0 2.7rem;
+              font-size: $fourteen-px;
+              line-height: $twenty-px;
+              font-weight: 500;
+              color: $txt-color;
+              background-image: url(../images/icons/calendar.svg);
+              background-repeat: no-repeat;
+              background-position: 0.8rem $twelve-px;
+              cursor: pointer;
+              &::-webkit-calendar-picker-indicator {
+                display: none;
+              }
+            }
           }
-          .cancel {
-            margin-right: 20px;
-            background-color: $cancel-color;
-            color: rgba(21, 25, 32, 0.5);
-          }
-          .save {
-            background-color: $save-color;
-            color: $white;
+
+          .buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            .button {
+              width: 11.25rem;
+              height: 3.5rem;
+              border-radius: 0.6rem;
+              border: none;
+              font-family: "Work Sans";
+              font-weight: 600;
+              font-size: 1.125rem;
+              line-height: $thirtytwo-px;
+            }
+            .cancel {
+              margin-right: $twenty-px;
+              background-color: $cancel-color;
+              color: rgba(21, 25, 32, 0.5);
+            }
+            .save {
+              background-color: $save-color;
+              color: $white;
+            }
           }
         }
       }
